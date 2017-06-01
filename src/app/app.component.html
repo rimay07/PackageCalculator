@@ -1,0 +1,27 @@
+<div class="container" align="center">
+  <h1 class="title">Package Calculator</h1>
+  <form [formGroup]="packageForm" name="packageForm" (ngSubmit)="calculateTotalPrice(packageForm.value)">
+    <div class="form-group">
+      <label for="">Weight</label>
+      <input type="text" class="form-control" name="weight" formControlName="weight" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Package Weight'" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : (event.keyCode == 46 || (event.charCode >= 48 && event.charCode <= 57))" placeholder="Enter Package Weight">
+    </div>
+    <div class="form-group">
+      <label for="">Height</label>
+      <input type="text" class="form-control" name="height" formControlName="height" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Package Height'" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null :(event.keyCode == 46 || (event.charCode >= 48 && event.charCode <= 57))" placeholder="Enter Package Height">
+    </div>
+    <div class="form-group">
+      <label for="">Width</label>
+      <input type="text" class="form-control" name="width" formControlName="width" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Package Width'" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : (event.keyCode == 46 || (event.charCode >= 48 && event.charCode <= 57))" placeholder="Enter Package Width">
+    </div>
+    <div class="form-group">
+      <label for="">Depth</label>
+      <input type="text" class="form-control" name="depth" formControlName="depth" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Package Depth'" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : (event.keyCode == 46 || (event.charCode >= 48 && event.charCode <= 57))" placeholder="Enter Package Depth">
+    </div>
+    <button type="submit" class="btn btn-default">Calculate</button>
+    <div id="resetBtn" (click)="resetDivs(packageForm)">Reset</div>
+    <div class="form-group">
+        <label for="">TOTAL:</label>
+      <div id="total"></div>
+    </div>
+  </form>
+</div>
